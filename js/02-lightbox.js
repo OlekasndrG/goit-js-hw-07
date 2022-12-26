@@ -21,6 +21,16 @@ function createGalleryItem(items) {
     })
     .join('');
 }
+const gallery = new SimpleLightbox('.gallery a', {
+  overlayOpacity: 0.3,
+  showCounter: false,
+  captions: true,
+  captionSelector: 'img',
+  captionType: 'attr',
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
+});
 function onImageClick(event) {
   event.preventDefault();
   const smallImage = event.target;
@@ -30,22 +40,12 @@ function onImageClick(event) {
   if (!issmallImgeEl) {
     return;
   }
-  const gallery = new SimpleLightbox('.gallery a', {
-    overlayOpacity: 0.3,
-    showCounter: false,
-    captions: true,
-    captionSelector: 'img',
-    captionType: 'attr',
-    captionsData: 'alt',
-    captionPosition: 'bottom',
-    captionDelay: 250,
-  });
-
-  //   gallery.on('show.simplelightbox', function () {
-  //     console.log(event.target.alt);
-  //   });
-
-  //   gallery.on('error.simplelightbox', function (e) {
-  //     console.log(e); // Some usefull information
-  //   });
 }
+
+//   gallery.on('show.simplelightbox', function () {
+//     console.log(event.target.alt);
+//   });
+
+//   gallery.on('error.simplelightbox', function (e) {
+//     console.log(e); // Some usefull information
+//   });
